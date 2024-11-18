@@ -2,15 +2,19 @@
 
 module.exports = {
   content: [
-    "./src/**/*.{html,js,vue}", 
+    "./src/**/*.{html,js,vue}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        kanit: ['Kanit', 'sans-serif'], // เพิ่มฟอนต์ Kanit
+      },
+    },
   },
   plugins: [
     require('daisyui'),
   ],
   daisyui: {
-    themes: ["autumn"],
+    themes: ["light"],
   },
 };

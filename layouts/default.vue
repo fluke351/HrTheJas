@@ -20,7 +20,7 @@
       <ul
         v-if="isDropdownOpen"
         tabindex="0"
-        class=" text-white menu menu-sm dropdown-content bg-red-300 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow border ">
         <li><a>Homepage</a></li>
         <li><a>Portfolio</a></li>
         <li><a>About</a></li>

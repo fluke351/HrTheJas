@@ -13,6 +13,12 @@ export default defineNuxtConfig({
         // { name: "description", content: "คำอธิบายเว็บไซต์" },
         // { name: "keywords", content: "keyword1, keyword2, keyword3" }
       ],
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap',
+        },
+      ],
       // link: [
       //   // เพิ่ม favicon
       //   { rel: 'icon', type: 'image/png', href: '/logo.png' }, 
