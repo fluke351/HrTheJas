@@ -89,8 +89,7 @@ export default {
       isDrawerOpen: false,
       isDropdownOpen: false,
       storedName: "",
-      // _data: useAuth().data,
-      // user: _data._object["$sauth:data"].user
+      user: useAuth().data._object["$sauth:data"].user
     };
   },
   methods: {

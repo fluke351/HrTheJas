@@ -30,69 +30,25 @@
 
 <script>
 import axios from "axios";
-
 export default {
   data() {
 
     return {
       Username: "",
       Password: "",
-  
+
     };
   },
   methods: {
-
     async login() {
       try {
-        const response = await axios.post(
-          "http://localhost:7735/Hr_Stamp/Login",
-          {
-            username: this.Username,
-            password: this.Password,
-          },
-          {
-            // headers: {
-            //   authorization: "x3oimG1HoVEHPHF7mi61",
-            // },
-          }
-        );
-        console.log("Response Data:", response.data);
-        if (response.data.message === "Success") {
-          this.getUser(this.Username, this.Password, response.data.token)
-          let { signIn } = useAuth()
-          signIn(this.Username, this.Password)
-          this.$router.push("/branch");
-        } else {
-          alert("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
-        }
+        console.log(this.Username)
+        let { signIn } = useAuth()
+        await signIn({ username: this.Username, password: this.Password }, { callbackUrl: '/branch' })
       } catch (error) {
-        console.error("Login Error:", error);
-
+        console.log(error);
       }
     },
-    async getUser(u, p, token) {
-  try {
-    const response = await axios.get(
-      "http://localhost:7735/Hr_Stamp/Get_User",
-      {
-        headers: {
-          authorization: `Bearer ${token}`, // ใส่ "Bearer " นำหน้า token
-        },
-        params: {
-          username: u,
-          password: p,
-        },
-      }
-    );
-    localStorage.setItem("Nameuser",response.data.user.Nameuser); 
-    localStorage.setItem("Username",response.data.user.Username); 
-    localStorage.setItem("DEPT1",response.data.user.DEPT1); 
- 
-    console.log("User Data:", response.data);
-  } catch (error) {
-    console.error("User Error:", error.response?.data || error.message);
-  }
-}
   },
 };
 </script>

@@ -228,7 +228,7 @@
 import axios from "axios";
 import loader from "~/components/loader.vue";
 import Edit from "~/components/edit.vue";
-import ske_model from "~/components/ske_model.vue";
+// import ske_model from "~/components/ske_model.vue";
 
 export default {
   data() {

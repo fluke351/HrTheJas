@@ -66,11 +66,11 @@
               <input type="text" class="input input-bordered w-full p-3 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all" />
             </div>
           </div>
-
+          
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
             <div>
               <label class="block text-start text-gray-700 font-medium mb-2">ชื่อผู้บันทึก:</label>
-              <input type="text" class="input input-bordered w-full p-3 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all" />
+              <input type="text" :value="user.PRS_NO" class="input input-bordered w-full p-3 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all" />
             </div>
             <div>
               <label class="block text-start text-gray-700 font-medium mb-2">วันที่บันทึก:</label>
@@ -120,6 +120,7 @@ export default {
       branchIds: this.branchId,
       branchData: [],
       loader: true,
+      user: useAuth().data._object["$sauth:data"].user
     };
   },
   methods: {

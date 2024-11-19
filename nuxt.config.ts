@@ -32,8 +32,7 @@ export default defineNuxtConfig({
   auth: {
     globalAppMiddleware: true,
     baseURL: 'http://localhost:7735/Hr_Stamp',
-
-    // baseURL: process.env.api_base_url,
+      authorization: "x3oimG1HoVEHPHF7mi61",
     provider: {
       type: 'local',
       endpoints: {
