@@ -143,10 +143,10 @@
         >
           <div class="space-y-4">
             <div
-              class="bg-gray-50/80 rounded-lg p-4 hover:bg-gray-50 transition-colors shadow-md"
+              class=" skeleton bg-gray-50/80 rounded-lg p-4 hover:bg-gray-50 transition-colors shadow-md"
             >
               <p class="font-medium text-gray-700 mb-2">ชื่อสาขา</p>
-              <p class="text-gray-600">{{ branchDl[0].Branch_Name }}</p>
+              <p class=" text-gray-600">{{ branchDl[0].Branch_Name }}</p>
             </div>
 
             <div
@@ -199,8 +199,8 @@
               <p class="font-medium text-gray-700 mb-2">รหัสไปรษณีย์</p>
               <p class="text-gray-600">{{ branchDl[0].Zipcode }}</p>
             </div>
+ 
           </div>
-
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div
               class="bg-gray-50/80 rounded-lg p-4 hover:bg-gray-50 transition-colors shadow-md"
@@ -218,6 +218,9 @@
         </div>
       </div>
     </dialog>
+    <div>
+    <ske  />
+   </div>
   </div>
 </template>
 
@@ -225,6 +228,7 @@
 import axios from "axios";
 import loader from "~/components/loader.vue";
 import Edit from "~/components/edit.vue";
+import ske_model from "~/components/ske_model.vue";
 
 export default {
   data() {
@@ -300,6 +304,7 @@ export default {
   components: {
     loader,
     Edit,
+    
   },
 };
 </script>

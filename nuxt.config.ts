@@ -2,7 +2,9 @@
 export default defineNuxtConfig({
   
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@sidebase/nuxt-auth'
+    
   ],
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -26,7 +28,29 @@ export default defineNuxtConfig({
       //   { rel: 'apple-touch-icon', href: '/logo.png' }
       // ]
     }
-  }
+  },
+  auth: {
+    globalAppMiddleware: true,
+    baseURL: 'http://localhost:7735/Hr_Stamp',
+
+    // baseURL: process.env.api_base_url,
+    provider: {
+      type: 'local',
+      endpoints: {
+        signIn: { path: '/Login', method: 'post' },
+        getSession: { path: '/Get_User', method: 'get' }
+      },
+      pages: { login: '/' },
+      token: { signInResponseTokenPointer: '/token', maxAgeInSeconds: 60 * 10 * 10 },
+      sessionDataType: {}
+    },
+    enableSessionRefreshPeriodically: 60 * 10 * 10,
+    enableSessionRefreshOnWindowFocus: false,
+    globalMiddlewareOptions: {
+      allow404WithoutAuth: false,
+      addDefaultCallbackUrl: '/'
+    },
+  },
 })
 
 
